@@ -23,15 +23,7 @@ await page.getByText('important text that you').evaluate(el => el.innerHTML = 'W
 
      test('getbylabel', async ({ page }) => { 
 
-      await page.screenshot({ path: 'screenshot.png' });
-    await page.getByLabel('Express').check(); 
-          await page.screenshot({ path: 'screenshot2.png' });
-
-    page.waitForTimeout(5000);
-    await page.getByLabel('Express').uncheck();
-          await page.screenshot({ path: 'screenshot3.png' });
-
-    // ...existing code...
+      
   });
 
 });
