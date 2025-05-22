@@ -1,17 +1,7 @@
 pipeline {
   agent any
 
-  tools {
-    nodejs "NodeJS 18" // Assure-toi que Jenkins a NodeJS configuré
-  }
-
   stages {
-    stage('Checkout') {
-      steps {
-        git 'https://github.com/stef-maro/playwright-project.git'
-      }
-    }
-
     stage('Install dependencies') {
       steps {
         sh 'npm ci'
@@ -39,7 +29,7 @@ pipeline {
 
   post {
     always {
-      junit 'test-results/**/*.xml' // Si tu actives le reporter JUnit
+      junit 'test-results/**/*.xml'
     }
   }
 }
